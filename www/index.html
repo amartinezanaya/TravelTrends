@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Test Swagger Client</title>
+<script src='swagger-client.js' type='text/javascript'></script>
+<script type="text/javascript">
+  // initialize swagger client, point to a resource listing
+  window.client = new SwaggerClient({
+    url: "wss://sandbox.api.connect.travelaudience.com/search-requests",
+    success: function() {
+      // upon connect, fetch a pet and set contents to element "mydata"
+      client.data.getDataById({dataId:1},{responseContentType: 'application/json'},function(data) {
+        document.getElementById("mydata").innerHTML = JSON.stringify(data.obj);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <div id="mydata"></div>
+    Travel trends!!!
+</body>
+</html>
